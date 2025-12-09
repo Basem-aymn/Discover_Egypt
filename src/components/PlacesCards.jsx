@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const PlacesCards = ({ places }) => {
   return (
@@ -16,7 +16,11 @@ const PlacesCards = ({ places }) => {
           whileTap={{ scale: 0.95 }}
         >
           <div className="relative">
-            <img src={place.image} alt={place.name} className="w-full h-56 object-cover" />
+            <img
+              src={place.image}
+              alt={place.name}
+              className="w-full h-56 object-cover"
+            />
             <motion.div
               className="absolute top-4 right-4 bg-white bg-opacity-95 rounded-full px-3 py-1 shadow-lg"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -42,9 +46,15 @@ const PlacesCards = ({ places }) => {
             </motion.div>
           </div>
           <div className="p-6">
-            <h3 className="text-2xl font-bold text-gray-800 mb-3">{place.name}</h3>
-            <p className="text-gray-600 mb-4 text-base leading-relaxed">{place.description}</p>
-            <h4 className="font-semibold mb-3 text-lg text-gray-800">Nearby Restaurants:</h4>
+            <h3 className="text-2xl font-bold text-gray-800 mb-3">
+              {place.name}
+            </h3>
+            <p className="text-gray-600 mb-4 text-base leading-relaxed">
+              {place.description}
+            </p>
+            <h4 className="font-semibold mb-3 text-lg text-gray-800">
+              Nearby Restaurants:
+            </h4>
             <ul className="space-y-2">
               {place.restaurants.map((restaurant, index) => (
                 <motion.li
