@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const Slider = () => {
   const images = [
-    'https://picsum.photos/800/400?random=1',
-    'https://picsum.photos/800/400?random=2',
-    'https://picsum.photos/800/400?random=3'
+    "https://picsum.photos/800/400?random=1",
+    "https://picsum.photos/800/400?random=2",
+    "https://picsum.photos/800/400?random=3",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,13 +29,19 @@ const Slider = () => {
         <motion.div
           key={index}
           className={`absolute inset-0 transition-all duration-1000 ${
-            index === currentIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+            index === currentIndex
+              ? "opacity-100 scale-100"
+              : "opacity-0 scale-105"
           }`}
           initial={{ opacity: 0 }}
           animate={{ opacity: index === currentIndex ? 1 : 0 }}
           transition={{ duration: 1 }}
         >
-          <img src={image} alt={`Slide ${index + 1}`} className="w-full h-full object-cover" />
+          <img
+            src={image}
+            alt={`Slide ${index + 1}`}
+            className="w-full h-full object-cover"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
         </motion.div>
       ))}
@@ -50,7 +56,9 @@ const Slider = () => {
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`w-4 h-4 rounded-full transition-all duration-300 ${
-              index === currentIndex ? 'bg-white shadow-lg scale-125' : 'bg-white/60 hover:bg-white/80'
+              index === currentIndex
+                ? "bg-white shadow-lg scale-125"
+                : "bg-white/60 hover:bg-white/80"
             }`}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
@@ -64,12 +72,21 @@ const Slider = () => {
         transition={{ duration: 0.6, delay: 0.3 }}
       >
         <h2 className="text-2xl font-bold text-gray-800">Discover Egypt</h2>
-        <p className="text-sm text-gray-600 mt-1">Explore ancient wonders</p>
+        <p
+          style={{ fontFamily: ' "Quicksand", sans-serif ', fontWeight: 300 }}
+          className="text-sm text-gray-600 mt-1"
+        >
+          Explore ancient wonders
+        </p>
       </motion.div>
       <motion.button
-        onClick={() => setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)}
+        onClick={() =>
+          setCurrentIndex(
+            (prevIndex) => (prevIndex - 1 + images.length) % images.length
+          )
+        }
         className="absolute left-6 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-300"
-        whileHover={{ scale: 1.1, backgroundColor: 'rgba(255, 255, 255, 1)' }}
+        whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 1)" }}
         whileTap={{ scale: 0.9 }}
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
@@ -78,9 +95,11 @@ const Slider = () => {
         <span className="text-gray-800 text-xl">‹</span>
       </motion.button>
       <motion.button
-        onClick={() => setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)}
+        onClick={() =>
+          setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+        }
         className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-3 shadow-lg transition-all duration-300"
-        whileHover={{ scale: 1.1, backgroundColor: 'rgba(255, 255, 255, 1)' }}
+        whileHover={{ scale: 1.1, backgroundColor: "rgba(255, 255, 255, 1)" }}
         whileTap={{ scale: 0.9 }}
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
