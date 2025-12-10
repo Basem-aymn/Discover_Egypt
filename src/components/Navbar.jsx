@@ -8,7 +8,11 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isOpen && menuRef.current && !menuRef.current.contains(event.target)) {
+      if (
+        isOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target)
+      ) {
         setIsOpen(false);
       }
     };
@@ -20,13 +24,13 @@ const Navbar = () => {
     };
 
     if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      window.addEventListener('scroll', handleScroll);
+      document.addEventListener("mousedown", handleClickOutside);
+      window.addEventListener("scroll", handleScroll);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [isOpen]);
 
@@ -36,7 +40,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link
             to="/"
-            className="text-xl md:text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors"
+            className="text-xl md:text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors jura-font"
           >
             Discover Egypt
           </Link>
@@ -45,13 +49,13 @@ const Navbar = () => {
           <div className="hidden md:flex space-x-8">
             <Link
               to="/"
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="text-gray-700 hover:text-blue-600 transition-colors font-medium  jura-font "
             >
               Home
             </Link>
             <Link
               to="/places"
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="text-gray-700 hover:text-blue-600 transition-colors font-medium   jura-font"
             >
               Places
             </Link>

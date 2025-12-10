@@ -62,8 +62,8 @@ const PlaceDetail = () => {
               viewport={{ once: true }}
             >
               <div>
-                <h1 className="text-5xl font-extrabold text-gray-800 mb-4 tracking-tight">{place.name}</h1>
-                <p className="text-2xl text-gray-600 flex items-center">
+                <h1 className="text-5xl font-extrabold text-gray-800 mb-4 tracking-tight  jura-font">{place.name}</h1>
+                <p className="text-2xl text-gray-600 flex items-center  jura-font">
                   <span className="text-blue-500 mr-4 text-3xl">📍</span>
                   {place.city}
                 </p>
@@ -155,7 +155,7 @@ const PlaceDetail = () => {
               transition={{ duration: 0.6, delay: 1.0 }}
               viewport={{ once: true }}
             >
-              <Link to="/places" className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105">
+              <Link to="/places" className="inline-block  jura-font bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105">
                 Explore More Places
               </Link>
             </motion.div>

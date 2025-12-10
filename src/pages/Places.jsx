@@ -36,7 +36,7 @@ const Places = () => {
           viewport={{ once: true }}
         >
           <motion.h1
-            className="text-6xl font-extrabold text-gray-800 mb-6 tracking-tight"
+            className="text-6xl font-extrabold text-gray-800 mb-6 tracking-tight  jura-font"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}

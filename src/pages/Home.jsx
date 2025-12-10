@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Slider from "../components/Slider";
 import Footer from "../components/Footer";
 import { places } from "../data/places";
+import backgroundImage from "../assets/photo-1608546043931-6c9678ea9feb.avif";
 
 const Home = () => {
   const bestDestinations = places
@@ -27,12 +28,7 @@ const Home = () => {
         >
           <div className="text-center mb-16">
             <motion.h2
-              className="text-5xl text-gray-800 mb-6 tracking-tight"
-              style={{
-                fontFamily: ' "Public Sans", sans-serif',
-                fontWeight: 700,
-                fontStyle: "normal",
-              }}
+              className="text-5xl text-gray-800 mb-6 tracking-tight  jura-font "
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -42,7 +38,10 @@ const Home = () => {
             </motion.h2>
             <motion.p
               className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
-              style={{ fontFamily: ' "Quicksand", sans-serif ', fontWeight: 300, }}
+              style={{
+                fontFamily: ' "Quicksand", sans-serif ',
+                fontWeight: 300,
+              }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -107,8 +106,7 @@ const Home = () => {
         >
           <div className="text-center mb-12">
             <motion.h2
-              className="text-5xl text-gray-800 mb-4"
-              style={{ fontFamily: '"Public Sans", sans-serif', fontWeight: 700, fontStyle: 'normal' }}
+              className="text-5xl text-gray-800 mb-4  jura-font"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -166,18 +164,27 @@ const Home = () => {
           </div>
         </motion.section>
 
-        <section className="text-center bg-white rounded-2xl shadow-xl p-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+        <section
+          className="text-center rounded-2xl shadow-xl p-12 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        >
+          <h2
+            className="text-3xl font-bold text-white mb-4 drop-shadow-lg  jura-font"
+            style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}
+          >
             Ready to Explore Egypt?
           </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p
+            className="text-lg text-white mb-8 max-w-2xl mx-auto drop-shadow-md  jura-font"
+            style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.7)" }}
+          >
             Discover Egypt is your ultimate guide to the wonders of the Nile.
             From ancient pyramids to modern marvels, let us help you create
             unforgettable memories.
           </p>
           <Link
             to="/places"
-            className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105"
+            className="inline-block bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
             Explore All Places
           </Link>

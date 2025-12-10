@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import sliderImage1 from '../assets/premium_photo-1661963306092-3db257ff7c8b.avif';
+import sliderImage2 from '../assets/photo-1702909171830-2c4dca2ac090.avif';
+import sliderImage3 from '../assets/photo-1678747365851-2f2ebb09911d.avif';
 
 const Slider = () => {
   const images = [
-    "https://picsum.photos/800/400?random=1",
-    "https://picsum.photos/800/400?random=2",
-    "https://picsum.photos/800/400?random=3",
+    sliderImage1,
+    sliderImage2,
+    sliderImage3,
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -41,6 +44,8 @@ const Slider = () => {
             src={image}
             alt={`Slide ${index + 1}`}
             className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
         </motion.div>
@@ -71,7 +76,7 @@ const Slider = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
       >
-        <h2 className="text-2xl font-bold text-gray-800">Discover Egypt</h2>
+        <h2 className="text-2xl font-bold  jura-font text-gray-800">Discover Egypt</h2>
         <p
           style={{ fontFamily: ' "Quicksand", sans-serif ', fontWeight: 300 }}
           className="text-sm text-gray-600 mt-1"
